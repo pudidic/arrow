@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import org.apache.arrow.vector.types.Types;
+import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.apache.drill.common.types.TypeProtos.MinorType;
 
 <@pp.dropOutputFile />
@@ -43,6 +45,7 @@ abstract class AbstractPromotableFieldWriter extends AbstractFieldWriter {
    * @return the corresponding field writer
    */
   abstract protected FieldWriter getWriter(MinorType type);
+  abstract protected FieldWriter getWriter(MinorType type, ArrowType arrowType);
 
   /**
    * @return the current FieldWriter

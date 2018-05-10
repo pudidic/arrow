@@ -113,6 +113,21 @@ public class UnionListWriter extends AbstractFieldWriter {
   </#list></#list>
 
   @Override
+  public DecimalWriter decimal() {
+    return this;
+  }
+
+  @Override
+  public DecimalWriter decimal(String name, int scale, int precision) {
+    return writer.decimal(name, scale, precision);
+  }
+
+  @Override
+  public DecimalWriter decimal(String name) {
+    return writer.decimal(name);
+  }
+
+  @Override
   public MapWriter map() {
     inMap = true;
     return this;
